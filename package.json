@@ -5,10 +5,10 @@
     "license": "GPLv3",
     "author": "Chen-Pang He (https://jdh8.org)",
     "engines": {
-        "node": ">=18.4"
+        "node": ">=16"
     },
     "scripts": {
-        "start": "node --experimental-json-modules index.mjs"
+        "start": "node index.mjs"
     },
     "dependencies": {
         "dotenv": "^16.3.1",
