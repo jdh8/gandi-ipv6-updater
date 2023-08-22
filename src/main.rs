@@ -2,7 +2,7 @@ use dotenv::var;
 use local_ip_address::local_ipv6;
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+async fn main() -> anyhow::Result<()> {
     let uri = format!(
         "https://api.gandi.net/v5/livedns/domains/{}/records/{}/AAAA",
         var("FQDN")?,
