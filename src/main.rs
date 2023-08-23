@@ -3,11 +3,8 @@ use local_ip_address::local_ipv6;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let uri = format!(
-        "https://api.gandi.net/v5/livedns/domains/{}/records/{}/AAAA",
-        var("FQDN")?,
-        var("NAME")?,
-    );
+    let uri = "https://api.gandi.net/v5/livedns/domains/".to_owned()
+        + &var("FQDN")? + "/records/" + &var("NAME")? + "/AAAA";
 
     reqwest::Client::new()
         .put(uri)
